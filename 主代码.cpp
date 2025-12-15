@@ -1,16 +1,43 @@
-#include"´úÂëÉùÃ÷.h"
+#include<iostream>
+#include<string>
+#include<fstream>
+#include <cstdlib>  
+#include <ctime>    
+#include <cstdio>
+#include <thread>
+#include <windows.h>
+#include <chrono>
+#include<sstream>
+
+
+using namespace std;
+void denglu();
+void zhuce();
+void YHcaidan();
+void JZgongneng();
+void shouru();
+void chakan();
+void zhichu();
+void guanriDL();
+void shangchu();
+void GLchakan();
+void GLdenlu();
+void GLshangchu();
+void GLxiugai();
+void zhuxiao();
+void tongji();
 
 string yhm, mima;
 
-void zhucaidan()//Ö÷²Ëµ¥
+void zhucaidan()//ä¸»èœå•
 {
 	
-	cout << "==¡ª¡ª Ö÷ ²Ë µ¥ ¡ª¡ª== "<< endl;
-	cout << " ÓÃ»§µÇÂ¼¡¾1¡¿" << endl;
-	cout << " ÓÃ»§×¢²á¡¾2¡¿" << endl;
-	cout << " ¹ÜÀíÔ±µÇÂ¼¡¾3¡¿" << endl;
-	cout << " ÍË³ö³ÌĞò¡¾ÈÎÒâ¼ü¡¿" << endl;
-	cout << "ÇëÑ¡Ôñ²Ù×÷£º";
+	cout << "==â€”â€” ä¸» èœ å• â€”â€”== "<< endl;
+	cout << " ç”¨æˆ·ç™»å½•ã€1ã€‘" << endl;
+	cout << " ç”¨æˆ·æ³¨å†Œã€2ã€‘" << endl;
+	cout << " ç®¡ç†å‘˜ç™»å½•ã€3ã€‘" << endl;
+	cout << " é€€å‡ºç¨‹åºã€ä»»æ„é”®ã€‘" << endl;
+	cout << "è¯·é€‰æ‹©æ“ä½œï¼š";
 	int dlu;
 	cin >> dlu;
 		if (dlu == 1)
@@ -30,7 +57,7 @@ void zhucaidan()//Ö÷²Ëµ¥
 		}
 		else
 		{
-			cout << "ÒÑÍË³ö¸Ã³ÌĞò" << endl;
+			cout << "å·²é€€å‡ºè¯¥ç¨‹åº" << endl;
 
 			exit(0);
 		}
@@ -38,15 +65,15 @@ void zhucaidan()//Ö÷²Ëµ¥
 	
 }
 
-void guanriDL()//¹ÜÀíÔ±¹¦ÄÜÖ÷²Ëµ¥
+void guanriDL()//ç®¡ç†å‘˜åŠŸèƒ½ä¸»èœå•
 {
 	int cz;
-	cout << "==¡ª¡ª ¹ÜÀíÔ±¹¦ÄÜ ¡ª¡ª== " << endl;
-	cout << " ²éÑ¯ÓÃ»§ÕËºÅ¡¾1¡¿" << endl;
-	cout << " É¾³ıÓÃ»§ÕËºÅ¡¾2¡¿" << endl;
-	cout << " ĞŞ¸ÄÓÃ»§ÃÜÂë¡¾3¡¿" << endl;
-	cout << " ÍË³ö¹ÜÀíÔ±µÇÂ¼¡¾4¡¿" << endl;
-	cout << "ÇëÑ¡Ôñ²Ù×÷£º" << endl;
+	cout << "==â€”â€” ç®¡ç†å‘˜åŠŸèƒ½ â€”â€”== " << endl;
+	cout << " æŸ¥è¯¢ç”¨æˆ·è´¦å·ã€1ã€‘" << endl;
+	cout << " åˆ é™¤ç”¨æˆ·è´¦å·ã€2ã€‘" << endl;
+	cout << " ä¿®æ”¹ç”¨æˆ·å¯†ç ã€3ã€‘" << endl;
+	cout << " é€€å‡ºç®¡ç†å‘˜ç™»å½•ã€4ã€‘" << endl;
+	cout << "è¯·é€‰æ‹©æ“ä½œï¼š" << endl;
 	
 	while (true)
 	{
@@ -76,35 +103,35 @@ void guanriDL()//¹ÜÀíÔ±¹¦ÄÜÖ÷²Ëµ¥
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUI11;
 		}
 	}
-}//¹ÜÀíÔ±¹¦ÄÜ²Ëµ¥
+}//ç®¡ç†å‘˜åŠŸèƒ½èœå•
 
-void GLxiugai()//ĞŞ¸ÄÓÃ»§ÃûÃÜÂë
+void GLxiugai()//ä¿®æ”¹ç”¨æˆ·åå¯†ç 
 {
 
 	remove("lingshi.txt");
 	string yhmgl, id, mimagl;
 	ifstream glchak;
 	glchak.open("yonghu.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎªÓÃ»§ĞÅÏ¢ÁĞ±í¡ª¡ª¡ª¡ª" << endl;
-	while (glchak >> yhmgl && glchak >> mimagl && glchak >> id)//¶ÁÈ¡ÓÃ»§ĞÅÏ¢
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºç”¨æˆ·ä¿¡æ¯åˆ—è¡¨â€”â€”â€”â€”" << endl;
+	while (glchak >> yhmgl && glchak >> mimagl && glchak >> id)//è¯»å–ç”¨æˆ·ä¿¡æ¯
 	{
-		cout << "ÓÃ»§Ãû£º" << yhmgl << " " << "ÃÜÂë£º" << mimagl<<" "<<"ID:" << id << endl;
+		cout << "ç”¨æˆ·åï¼š" << yhmgl << " " << "å¯†ç ï¼š" << mimagl<<" "<<"ID:" << id << endl;
 	}
-	cout << "¡ª¡ª¡ª¡ªÒÔÉÏÎªÓÃ»§ĞÅÏ¢ÁĞ±í¡ª¡ª¡ª¡ª" << endl;
+	cout << "â€”â€”â€”â€”ä»¥ä¸Šä¸ºç”¨æˆ·ä¿¡æ¯åˆ—è¡¨â€”â€”â€”â€”" << endl;
 	glchak.close();
 
-	//¼à²âÊäÈëIDÊÇ·ñÓĞĞ§
+	//ç›‘æµ‹è¾“å…¥IDæ˜¯å¦æœ‰æ•ˆ
 	string lurudaima;
 	ifstream glchak5;
 	glchak5.open("yonghu.txt");
 	while (glchak5 >> yhmgl >> mimagl >> id)
 	{
 	FANHUI:;
-		cout << "ÇëÊäÈëÄãÒªĞŞ¸ÄÃÜÂëµÄÓÃ»§ID£º" << endl;
+		cout << "è¯·è¾“å…¥ä½ è¦ä¿®æ”¹å¯†ç çš„ç”¨æˆ·IDï¼š" << endl;
 		cin >> lurudaima;
 		if (lurudaima == id)
 		{
@@ -114,14 +141,14 @@ void GLxiugai()//ĞŞ¸ÄÓÃ»§ÃûÃÜÂë
 		}
 		else
 		{
-			cout << "ÎŞĞ§ID£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆIDï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUI;
 		}
 
 	}
 
 
-	//ĞŞ¸ÄÓÃ»§ÃÜÂë£¬ÏÈ½øĞĞÉ¾³ı
+	//ä¿®æ”¹ç”¨æˆ·å¯†ç ï¼Œå…ˆè¿›è¡Œåˆ é™¤
 	ifstream chak("yonghu.txt");
 	while (chak >> yhmgl >> mimagl >> id)
 	{
@@ -155,9 +182,9 @@ void GLxiugai()//ĞŞ¸ÄÓÃ»§ÃûÃÜÂë
 		}
 	}
 	
-	//É¾³ıºóÔÙĞ´ÈëÔ­À´µÄÓÃ»§ĞÅÏ¢£¬ÓÃ»§ÃûºÍID²»±ä£¬ÓÉ¹ÜÀíÔ±ÖØĞÂĞ´ÈëĞÂµÄÃÜÂë
+	//åˆ é™¤åå†å†™å…¥åŸæ¥çš„ç”¨æˆ·ä¿¡æ¯ï¼Œç”¨æˆ·åå’ŒIDä¸å˜ï¼Œç”±ç®¡ç†å‘˜é‡æ–°å†™å…¥æ–°çš„å¯†ç 
 	string newmima;
-	cout << "ÇëÊäÈëĞÂµÄÃÜÂë" << endl;
+	cout << "è¯·è¾“å…¥æ–°çš„å¯†ç " << endl;
 	cin >> newmima;
 	ofstream GLxiuga;
 	GLxiuga.open("yonghu.txt", ios::app);
@@ -166,7 +193,7 @@ void GLxiugai()//ĞŞ¸ÄÓÃ»§ÃûÃÜÂë
 
 
 	int cz;
-	cout << "°´1·µ»Ø£¬°´2¼ÌĞøĞŞ¸Ä" << endl;
+	cout << "æŒ‰1è¿”å›ï¼ŒæŒ‰2ç»§ç»­ä¿®æ”¹" << endl;
 	while (true)
 	{
 	FANHUI1:;
@@ -185,13 +212,13 @@ void GLxiugai()//ĞŞ¸ÄÓÃ»§ÃûÃÜÂë
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUI1;
 		}
 	}
 }
 
-void GLshangchu()//¹ÜÀíÔ±É¾³ıÓÃ»§
+void GLshangchu()//ç®¡ç†å‘˜åˆ é™¤ç”¨æˆ·
 {
 	remove("lingshi.txt");
 	string yhmgl, id, mimagl;
@@ -199,14 +226,14 @@ void GLshangchu()//¹ÜÀíÔ±É¾³ıÓÃ»§
 	
 	glchak.open("yonghu.txt");
 	
-	//¶ÔtxtÎÄ¼şËùÓĞÓÃ»§ĞÅÏ¢½øĞĞ¶ÁÈ¡
-		cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎªÓÃ»§ĞÅÏ¢ÁĞ±í¡ª¡ª¡ª¡ª" << endl;
+	//å¯¹txtæ–‡ä»¶æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯è¿›è¡Œè¯»å–
+		cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºç”¨æˆ·ä¿¡æ¯åˆ—è¡¨â€”â€”â€”â€”" << endl;
 		while (glchak >> yhmgl && glchak >> mimagl && glchak >> id)
 		{
 
-			cout << "ÓÃ»§Ãû£º" << yhmgl << " " << " " << "ID:" << id << endl;
+			cout << "ç”¨æˆ·åï¼š" << yhmgl << " " << " " << "ID:" << id << endl;
 		}
-		cout << "¡ª¡ª¡ª¡ªÒÔÉÏÎªÓÃ»§ĞÅÏ¢ÁĞ±í¡ª¡ª¡ª¡ª" << endl;
+		cout << "â€”â€”â€”â€”ä»¥ä¸Šä¸ºç”¨æˆ·ä¿¡æ¯åˆ—è¡¨â€”â€”â€”â€”" << endl;
 		glchak.close();
 		
 	
@@ -215,10 +242,10 @@ void GLshangchu()//¹ÜÀíÔ±É¾³ıÓÃ»§
 	string lurudaima;
 	ifstream glchak5;
 	glchak5.open("yonghu.txt");
-	while (glchak5>>yhmgl>> mimagl>>id)//¼ì²âÊäÈëµÄIDÊÇ·ñÓĞĞ§
+	while (glchak5>>yhmgl>> mimagl>>id)//æ£€æµ‹è¾“å…¥çš„IDæ˜¯å¦æœ‰æ•ˆ
 	{
 	FANHUI:;
-		cout << "ÇëÊäÈëÄãÒªÉ¾³ıµÄÓÃ»§ID£º" << endl;
+		cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„ç”¨æˆ·IDï¼š" << endl;
 		cin >> lurudaima;
 		if (lurudaima == id)
 		{
@@ -228,13 +255,13 @@ void GLshangchu()//¹ÜÀíÔ±É¾³ıÓÃ»§
 		}
 		else
 		{
-			cout << "ÎŞĞ§ID£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆIDï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUI;
 		}
 	
 	}
 
-	//½øĞĞÓÃ»§É¾³ı£¬ÏÈ¶ÁÈ¡³ıÁËĞèÉ¾³ıµÄÓÃ»§ÒÔÍâµÄËùÓĞÓÃ»§ĞÅÏ¢²¢¸´ÖÆµ½ĞÂ½¨µÄtxtÁÙÊ±ÎÄ¼şÀïÃæ£¬ÔÙÉ¾³ı¾ÉÎÄ¼ş£¬ÖØÃüÃûÁÙÊ±ÎÄ¼ş
+	//è¿›è¡Œç”¨æˆ·åˆ é™¤ï¼Œå…ˆè¯»å–é™¤äº†éœ€åˆ é™¤çš„ç”¨æˆ·ä»¥å¤–çš„æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯å¹¶å¤åˆ¶åˆ°æ–°å»ºçš„txtä¸´æ—¶æ–‡ä»¶é‡Œé¢ï¼Œå†åˆ é™¤æ—§æ–‡ä»¶ï¼Œé‡å‘½åä¸´æ—¶æ–‡ä»¶
 	ifstream chak("yonghu.txt");
 	while (chak >> yhmgl >> mimagl >> id)
 	{
@@ -260,8 +287,8 @@ void GLshangchu()//¹ÜÀíÔ±É¾³ıÓÃ»§
 
 			in.close();
 			out.close();
-			remove("yonghu.txt");//É¾³ı¾ÉÎÄ¼ş
-			rename("lingshi.txt", "yonghu.txt");//ÖØÃüÃûÁÙÊ±ÎÄ¼ş
+			remove("yonghu.txt");//åˆ é™¤æ—§æ–‡ä»¶
+			rename("lingshi.txt", "yonghu.txt");//é‡å‘½åä¸´æ—¶æ–‡ä»¶
 			break;
 		}
 	}
@@ -271,8 +298,8 @@ void GLshangchu()//¹ÜÀíÔ±É¾³ıÓÃ»§
 	
 
 	
-	cout << "ÓÃ»§£º" << yhmgl << "ÒÑ±»É¾³ı" << endl;
-	cout << "°´1·µ»Ø,°´2¼ÌĞøÉ¾³ı" << endl;
+	cout << "ç”¨æˆ·ï¼š" << yhmgl << "å·²è¢«åˆ é™¤" << endl;
+	cout << "æŒ‰1è¿”å›,æŒ‰2ç»§ç»­åˆ é™¤" << endl;
 	int cz;
 	while (true)
 	{
@@ -292,25 +319,25 @@ void GLshangchu()//¹ÜÀíÔ±É¾³ıÓÃ»§
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUI2;
 		}
 	}
 	
 }
 
-void GLdenlu()//¼ì²â¹ÜÀíÔ±µÇÂ¼µÄ´úÂë
+void GLdenlu()//æ£€æµ‹ç®¡ç†å‘˜ç™»å½•çš„ä»£ç 
 {
 	
 	string czgl;
 	string daima;
 	ifstream gldl;
 	gldl.open("guanri.txt");
-	cout << "ÇëÊäÈë¹ÜÀíÔ±·ÃÎÊ´úÂë" << endl;
+	cout << "è¯·è¾“å…¥ç®¡ç†å‘˜è®¿é—®ä»£ç " << endl;
 	cin >> czgl;
-	while (gldl >> daima)//¶ÔtxtÎÄ¼şĞ´ÈëµÄ¹ÜÀíÔ±µÇÂ¼´úÂë½øĞĞ¶ÁÈ¡
+	while (gldl >> daima)//å¯¹txtæ–‡ä»¶å†™å…¥çš„ç®¡ç†å‘˜ç™»å½•ä»£ç è¿›è¡Œè¯»å–
 	{
-		if (czgl==daima)//Èç¹û¶ÁÈ¡µ½ÔòÌø×ªµ½¹ÜÀíÔ±²Ëµ¥
+		if (czgl==daima)//å¦‚æœè¯»å–åˆ°åˆ™è·³è½¬åˆ°ç®¡ç†å‘˜èœå•
 		{
 			gldl.close();
 			system("cls");
@@ -319,11 +346,11 @@ void GLdenlu()//¼ì²â¹ÜÀíÔ±µÇÂ¼µÄ´úÂë
 		}
 	
 	}
-	cout << "µÇÂ¼Ê§°Ü" << endl;
+	cout << "ç™»å½•å¤±è´¥" << endl;
 	int cz;
 	while (1)
 	{
-		cout << "°´1·µ»Ø" << endl;
+		cout << "æŒ‰1è¿”å›" << endl;
 		cin >> cz;
 		if(cz == 1)
 		{
@@ -333,7 +360,7 @@ void GLdenlu()//¼ì²â¹ÜÀíÔ±µÇÂ¼µÄ´úÂë
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 		}
 
 	}
@@ -342,23 +369,23 @@ void GLdenlu()//¼ì²â¹ÜÀíÔ±µÇÂ¼µÄ´úÂë
 	
 }
 
-void GLchakan()//¹ÜÀíÔ±²é¿´ËùÓĞÓÃ»§ĞÅÏ¢
+void GLchakan()//ç®¡ç†å‘˜æŸ¥çœ‹æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯
 {
 
 	int czgl;
 	string yhmgl, id, mimagl;
 	ifstream glchak;
 	glchak.open("yonghu.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎªÓÃ»§ĞÅÏ¢ÁĞ±í¡ª¡ª¡ª¡ª" << endl;
-	while (glchak >> yhmgl && glchak >> mimagl && glchak >> id)//¶ÁÈ¡²¢Êä³öËùÓĞµÄÓÃ»§ĞÅÏ¢
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºç”¨æˆ·ä¿¡æ¯åˆ—è¡¨â€”â€”â€”â€”" << endl;
+	while (glchak >> yhmgl && glchak >> mimagl && glchak >> id)//è¯»å–å¹¶è¾“å‡ºæ‰€æœ‰çš„ç”¨æˆ·ä¿¡æ¯
 	{
-		cout << "ÓÃ»§Ãû£º" << yhmgl << " " << "ÃÜÂë£º" << mimagl << " " << "ID:" << id << endl;
+		cout << "ç”¨æˆ·åï¼š" << yhmgl << " " << "å¯†ç ï¼š" << mimagl << " " << "ID:" << id << endl;
 	}
 	glchak.close();
 	
 	while (1) 
 	{
-		cout << "ÊäÈë1·µ»Ø£º" << endl;
+		cout << "è¾“å…¥1è¿”å›ï¼š" << endl;
 		cin >> czgl;
 		if (czgl == 1)
 		{
@@ -368,14 +395,14 @@ void GLchakan()//¹ÜÀíÔ±²é¿´ËùÓĞÓÃ»§ĞÅÏ¢
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 		}
 		
 	}
 	
 }
 
-void denglu()//ÓÃ»§½øĞĞµÇÂ¼
+void denglu()//ç”¨æˆ·è¿›è¡Œç™»å½•
 {
 	
 	string yhmm;
@@ -383,14 +410,14 @@ void denglu()//ÓÃ»§½øĞĞµÇÂ¼
 	ifstream dl;
 	dl.open("yonghu.txt");
 	
-	cout << "==¡ª¡ª ÓÃ»§µÇÂ¼ ¡ª¡ª== " << endl;
-	cout << " ÓÃ»§Ãû£º";
+	cout << "==â€”â€” ç”¨æˆ·ç™»å½• â€”â€”== " << endl;
+	cout << " ç”¨æˆ·åï¼š";
 	cin >> yhm;
-	cout << " ÃÜÂë£º";
+	cout << " å¯†ç ï¼š";
 	cin >> mima;
-	while (dl >> dlyhm && dl >> dlmima &&dl>> dlsuijishu)//¶ÔtxtÎÄ¼ş½øĞĞ¶ÁÈ¡£¬¼ì²âÊäÈëµÄÓÃ»§ÓëÃÜÂëÊÇ·ñ´æÔÚ
+	while (dl >> dlyhm && dl >> dlmima &&dl>> dlsuijishu)//å¯¹txtæ–‡ä»¶è¿›è¡Œè¯»å–ï¼Œæ£€æµ‹è¾“å…¥çš„ç”¨æˆ·ä¸å¯†ç æ˜¯å¦å­˜åœ¨
 	{
-		if (yhm==dlyhm&&mima==dlmima)//Èô¶ÁÈ¡µ½ÔòÌø×ªµ½ÓÃ»§²Ëµ¥
+		if (yhm==dlyhm&&mima==dlmima)//è‹¥è¯»å–åˆ°åˆ™è·³è½¬åˆ°ç”¨æˆ·èœå•
 		{
 			
 			dl.close();
@@ -400,12 +427,12 @@ void denglu()//ÓÃ»§½øĞĞµÇÂ¼
 		}
 	}
 	int cz;
-	cout << "µÇÂ¼Ê§°Ü ÊäÈë1ÖØĞÂµÇÂ¼" << endl;
-	cout << "ÈôÃ»ÓĞÕËºÅ ÊäÈë2×¢²áÕËºÅ" << endl;
+	cout << "ç™»å½•å¤±è´¥ è¾“å…¥1é‡æ–°ç™»å½•" << endl;
+	cout << "è‹¥æ²¡æœ‰è´¦å· è¾“å…¥2æ³¨å†Œè´¦å·" << endl;
 	
 	while (true)
 	{
-		cout << "ÇëÊäÈë²Ù×÷£º" << endl;
+		cout << "è¯·è¾“å…¥æ“ä½œï¼š" << endl;
 		cin >> cz;
 		if (cz==1)
 		{
@@ -421,14 +448,14 @@ void denglu()//ÓÃ»§½øĞĞµÇÂ¼
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 		}
 	}
 	
 			
 }
 
-void zhuce()//ÓÃ»§½øĞĞ×¢²á
+void zhuce()//ç”¨æˆ·è¿›è¡Œæ³¨å†Œ
 {
 	
 	string yhmzc, mimazc,chatyhm,chatmima,id;
@@ -436,11 +463,11 @@ void zhuce()//ÓÃ»§½øĞĞ×¢²á
 	ofstream ofs;
 	ifstream chat;
 	
-	cout << "==¡ª¡ª ÓÃ»§×¢²á ¡ª¡ª== " << endl;
+	cout << "==â€”â€” ç”¨æˆ·æ³¨å†Œ â€”â€”== " << endl;
 
 	while (true) 
 	{
-		cout << " ÇëÊäÈëÓÃ»§Ãû£º" << endl;
+		cout << " è¯·è¾“å…¥ç”¨æˆ·åï¼š" << endl;
 		cin >> yhmzc;
 
 		
@@ -451,13 +478,13 @@ void zhuce()//ÓÃ»§½øĞĞ×¢²á
 		}
 
 		
-		while (chat >> chatyhm >> chatmima >> id)//¼ì²âÊäÈëµÄÓÃ»§ÃûÊÇ·ñÒÑ¾­´æÔÚ
+		while (chat >> chatyhm >> chatmima >> id)//æ£€æµ‹è¾“å…¥çš„ç”¨æˆ·åæ˜¯å¦å·²ç»å­˜åœ¨
 		{
 			
 			
 			if (yhmzc == chatyhm) 
 			{
-				cout << "ÕËºÅÒÑ´æÔÚ£¬ÇëÖØĞÂÊäÈë£¡" << endl;//Èô´æÔÚ¾ÍÈÃÓÃ»§ÖØĞÂÊäÈëÓÃ»§Ãû
+				cout << "è´¦å·å·²å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥ï¼" << endl;//è‹¥å­˜åœ¨å°±è®©ç”¨æˆ·é‡æ–°è¾“å…¥ç”¨æˆ·å
 				chat.close();
 				goto REINPUT; 
 			}
@@ -467,19 +494,19 @@ void zhuce()//ÓÃ»§½øĞĞ×¢²á
 	REINPUT:;
 	}
 	
-	//Éú³ÉËæ»úËæ»úÊı×÷ÎªÓÃ»§ID
+	//ç”Ÿæˆéšæœºéšæœºæ•°ä½œä¸ºç”¨æˆ·ID
 	srand((unsigned int)time(NULL));
 	int suijishu = rand() % 90000 + 10000;
 
-	cout << " ÇëÊäÈëÃÜÂë£º" << endl;
+	cout << " è¯·è¾“å…¥å¯†ç ï¼š" << endl;
 	cin >> mimazc;
 	ofs.open("yonghu.txt", ios::app);
 
-	ofs <<yhmzc<<" "<<mimazc<<" "<<suijishu<<endl;//½«×¢²áµÄÓÃ»§ÃûÓëÃÜÂëĞ´ÈëtxtÎÄ¼ş
+	ofs <<yhmzc<<" "<<mimazc<<" "<<suijishu<<endl;//å°†æ³¨å†Œçš„ç”¨æˆ·åä¸å¯†ç å†™å…¥txtæ–‡ä»¶
 	
 	ofs.close();
-	cout << "×¢²á³É¹¦" << endl;
-	cout << "°´1·µ»ØµÇÂ¼" << endl;
+	cout << "æ³¨å†ŒæˆåŠŸ" << endl;
+	cout << "æŒ‰1è¿”å›ç™»å½•" << endl;
 	
 	while (true)
 	{
@@ -493,50 +520,50 @@ void zhuce()//ÓÃ»§½øĞĞ×¢²á
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 		}
 		
 	}
 }
 
-void tongji() //ÓÃ»§Í³¼Æ¹¦ÄÜ
+void tongji() //ç”¨æˆ·ç»Ÿè®¡åŠŸèƒ½
 {
 	string word1, chayhm1, daima1, month1, day1, year1, leixing1;
 	ifstream chak1;
 	int arr[6] = { 0,0,0,0,0,0 };
 	int drr[9] = { 0,0,0,0,0,0,0,0,0 };
 	int m1, m2, m3=0;
-	int mm1=0, mm2 = 0, mm3 = 0, mm4 = 0, mm5 = 0;//ºóÃæ²ÅÏëÆğÀ´Êı×é¡£¡£¡£¡£¡£¡£
+	int mm1=0, mm2 = 0, mm3 = 0, mm4 = 0, mm5 = 0;//åé¢æ‰æƒ³èµ·æ¥æ•°ç»„ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚
 	chak1.open("shouru.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎª×ÜÊÕÈëĞÅÏ¢¡ª¡ª¡ª¡ª" << endl;
-	//¶ÔËùÓĞµÄÊÕÈë¼ÇÂ¼½øĞĞ¶ÁÈ¡
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºæ€»æ”¶å…¥ä¿¡æ¯â€”â€”â€”â€”" << endl;
+	//å¯¹æ‰€æœ‰çš„æ”¶å…¥è®°å½•è¿›è¡Œè¯»å–
 	while (chak1 >> chayhm1 >> leixing1 >> word1 >> m1 >> year1 >> month1 >> day1 >> daima1)
 	{
-		if (yhm == chayhm1)//ÅĞ¶ÏÓÃ»§Ãû
+		if (yhm == chayhm1)//åˆ¤æ–­ç”¨æˆ·å
 		{
 			m3 = m3 + m1;
 			arr[0]++;
-			if (leixing1=="¹¤×Ê")//¶ÔËùÓĞÀàĞÍ½øĞĞÀÛ¼Ó£¬²¢¼ÇÂ¼ÀÛ¼ÓµÄ´ÎÊı
+			if (leixing1=="å·¥èµ„")//å¯¹æ‰€æœ‰ç±»å‹è¿›è¡Œç´¯åŠ ï¼Œå¹¶è®°å½•ç´¯åŠ çš„æ¬¡æ•°
 			{
 				mm1 = mm1 + m1;
 				arr[1]++;
 			}
-			else if (leixing1 == "½±½ğ")
+			else if (leixing1 == "å¥–é‡‘")
 			{
 				mm2 = mm2 + m1;
 				arr[2]++;
 			}
-			else if (leixing1 == "¼æÖ°")
+			else if (leixing1 == "å…¼èŒ")
 			{
 				mm3 = mm3 + m1;
 				arr[3]++;
 			}
-			else if (leixing1 == "Àí²Æ")
+			else if (leixing1 == "ç†è´¢")
 			{
 				mm4 = mm4 + m1;
 				arr[4]++;
 			}
-			else if (leixing1 == "ÆäËü")
+			else if (leixing1 == "å…¶å®ƒ")
 			{
 				mm5 = mm5 + m1;
 				arr[5]++;
@@ -545,12 +572,12 @@ void tongji() //ÓÃ»§Í³¼Æ¹¦ÄÜ
 
 	}
 	chak1.close();
-	cout << "×ÜÊÕÈëÎª£º" << m3  <<"Ôª"<<"  " <<"¹²Í³¼Æ" << arr[0]<<"´Î"<<endl;
-	cout << "¹¤×ÊÀàĞÍ×ÜÊÕÈëÎª£º" << mm1 <<"Ôª"<< "  " << "¹²Í³¼Æ" << arr[1] << "´Î" << endl;
-	cout << "½±½ğÀàĞÍ×ÜÊÕÈëÎª£º" << mm2 <<"Ôª"<< "  " << "¹²Í³¼Æ" << arr[2] << "´Î" << endl;
-	cout << "¼æÖ°ÀàĞÍ×ÜÊÕÈëÎª£º" << mm3 <<"Ôª"<< "  " << "¹²Í³¼Æ" << arr[3] << "´Î" << endl;
-	cout << "Àí²ÆÀàĞÍ×ÜÊÕÈëÎª£º" << mm4 <<"Ôª"<< "  " << "¹²Í³¼Æ" << arr[4] << "´Î" << endl;
-	cout << "ÆäËüÀàĞÍ×ÜÊÕÈëÎª£º" << mm5 <<"Ôª"<< "  " << "¹²Í³¼Æ" << arr[5] << "´Î" << endl;
+	cout << "æ€»æ”¶å…¥ä¸ºï¼š" << m3  <<"å…ƒ"<<"  " <<"å…±ç»Ÿè®¡" << arr[0]<<"æ¬¡"<<endl;
+	cout << "å·¥èµ„ç±»å‹æ€»æ”¶å…¥ä¸ºï¼š" << mm1 <<"å…ƒ"<< "  " << "å…±ç»Ÿè®¡" << arr[1] << "æ¬¡" << endl;
+	cout << "å¥–é‡‘ç±»å‹æ€»æ”¶å…¥ä¸ºï¼š" << mm2 <<"å…ƒ"<< "  " << "å…±ç»Ÿè®¡" << arr[2] << "æ¬¡" << endl;
+	cout << "å…¼èŒç±»å‹æ€»æ”¶å…¥ä¸ºï¼š" << mm3 <<"å…ƒ"<< "  " << "å…±ç»Ÿè®¡" << arr[3] << "æ¬¡" << endl;
+	cout << "ç†è´¢ç±»å‹æ€»æ”¶å…¥ä¸ºï¼š" << mm4 <<"å…ƒ"<< "  " << "å…±ç»Ÿè®¡" << arr[4] << "æ¬¡" << endl;
+	cout << "å…¶å®ƒç±»å‹æ€»æ”¶å…¥ä¸ºï¼š" << mm5 <<"å…ƒ"<< "  " << "å…±ç»Ÿè®¡" << arr[5] << "æ¬¡" << endl;
 
 
 	string word2, chayhm2, daima2, leixing2, month2, year2, day2;
@@ -558,50 +585,50 @@ void tongji() //ÓÃ»§Í³¼Æ¹¦ÄÜ
 	int  m4=0;
 	int mmm1 = 0, mmm2 = 0, mmm3 = 0, mmm4 = 0, mmm5 = 0, mmm6 = 0, mmm7 = 0, mmm8 = 0;
 	chak2.open("zhichu.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎª×ÜÖ§³öĞÅÏ¢¡ª¡ª¡ª¡ª" << endl;
-	//¶ÔËùÓĞµÄÖ§³ö¼ÇÂ¼½øĞĞ¶ÁÈ¡
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºæ€»æ”¯å‡ºä¿¡æ¯â€”â€”â€”â€”" << endl;
+	//å¯¹æ‰€æœ‰çš„æ”¯å‡ºè®°å½•è¿›è¡Œè¯»å–
 	while (chak2 >> chayhm2 >> leixing2 >> word2 >> m2 >> year2 >> month2 >> day2 >> daima2)
 	{
 		if (yhm == chayhm2)
 		{
 			m4 = m4 + m2;
 			drr[0]++;
-			if (leixing2=="²ÍÒû")//¶ÔËùÓĞÀàĞÍ½øĞĞÀÛ¼Ó£¬²¢¼ÇÂ¼ÀÛ¼ÓµÄ´ÎÊı
+			if (leixing2=="é¤é¥®")//å¯¹æ‰€æœ‰ç±»å‹è¿›è¡Œç´¯åŠ ï¼Œå¹¶è®°å½•ç´¯åŠ çš„æ¬¡æ•°
 			{
 				mmm1 = mmm1 + m2;
 				drr[1]++;
 			}
-			else if (leixing2 == "¹ºÎï")
+			else if (leixing2 == "è´­ç‰©")
 			{
 				mmm2 = mmm2 + m2;
 				drr[2]++;
 			}
-			else if (leixing2 == "ÈÕÓÃ")
+			else if (leixing2 == "æ—¥ç”¨")
 			{
 				mmm3 = mmm3 + m2;
 				drr[3]++;
 			}
-			else if (leixing2 == "½»Í¨")
+			else if (leixing2 == "äº¤é€š")
 			{
 				mmm4 = mmm4 + m2;
 				drr[4]++;
 			}
-			else if (leixing2 == "ÓéÀÖ")
+			else if (leixing2 == "å¨±ä¹")
 			{
 				drr[5]++;
 				mmm5 = mmm5 + m2;
 			}
-			else if (leixing2 == "Í¨Ñ¶")
+			else if (leixing2 == "é€šè®¯")
 			{
 				mmm6 = mmm6 + m2;
 				drr[6]++;
 			}
-			else if (leixing2 == "Ò½ÁÆ")
+			else if (leixing2 == "åŒ»ç–—")
 			{
 				mmm7 = mmm7 + m2;
 				drr[7]++;
 			}
-			else if (leixing2 == "ÆäËü")
+			else if (leixing2 == "å…¶å®ƒ")
 			{
 				mmm8 = mmm8 + m2;
 				drr[8]++;
@@ -611,20 +638,20 @@ void tongji() //ÓÃ»§Í³¼Æ¹¦ÄÜ
 	}
 	chak2.close();
 
-	cout << "×ÜÖ§³öÎª£º" << m4 <<"Ôª"<< "  " << "¹²Í³¼Æ" << drr[0] << "´Î" << endl;
-	cout << "²ÍÒûÀàĞÍ×ÜÖ§³öÎª£º" << mmm1 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[1] << "´Î" << endl;
-	cout << "¹ºÎïÀàĞÍ×ÜÖ§³öÎª£º" << mmm2 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[2] << "´Î" << endl;
-	cout << "ÈÕÓÃÀàĞÍ×ÜÖ§³öÎª£º" << mmm3 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[3] << "´Î" << endl;
-	cout << "½»Í¨ÀàĞÍ×ÜÖ§³öÎª£º" << mmm4 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[4] << "´Î" << endl;
-	cout << "ÓéÀÖÀàĞÍ×ÜÖ§³öÎª£º" << mmm5 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[5] << "´Î" << endl;
-	cout << "Í¨Ñ¶ÀàĞÍ×ÜÖ§³öÎª£º" << mmm6 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[6] << "´Î" << endl;
-	cout << "Ò½ÁÆÀàĞÍ×ÜÖ§³öÎª£º" << mmm7 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[7] << "´Î" << endl;
-	cout << "ÆäËüÀàĞÍ×ÜÖ§³öÎª£º" << mmm8 << "Ôª" << "  " << "¹²Í³¼Æ" << drr[8] << "´Î" << endl;
+	cout << "æ€»æ”¯å‡ºä¸ºï¼š" << m4 <<"å…ƒ"<< "  " << "å…±ç»Ÿè®¡" << drr[0] << "æ¬¡" << endl;
+	cout << "é¤é¥®ç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm1 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[1] << "æ¬¡" << endl;
+	cout << "è´­ç‰©ç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm2 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[2] << "æ¬¡" << endl;
+	cout << "æ—¥ç”¨ç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm3 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[3] << "æ¬¡" << endl;
+	cout << "äº¤é€šç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm4 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[4] << "æ¬¡" << endl;
+	cout << "å¨±ä¹ç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm5 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[5] << "æ¬¡" << endl;
+	cout << "é€šè®¯ç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm6 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[6] << "æ¬¡" << endl;
+	cout << "åŒ»ç–—ç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm7 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[7] << "æ¬¡" << endl;
+	cout << "å…¶å®ƒç±»å‹æ€»æ”¯å‡ºä¸ºï¼š" << mmm8 << "å…ƒ" << "  " << "å…±ç»Ÿè®¡" << drr[8] << "æ¬¡" << endl;
 	cout << "-----------------------------------" << endl;
-	int m5 = m3 - m4;//½øĞĞÓà¶îµÄ¼ÆËã
+	int m5 = m3 - m4;//è¿›è¡Œä½™é¢çš„è®¡ç®—
 	cout << endl;
 	cout << endl;
-	cout << "Ê£Óà: " << m5 << " Ôª" << endl;
+	cout << "å‰©ä½™: " << m5 << " å…ƒ" << endl;
 
 
 	cout << endl;
@@ -632,7 +659,7 @@ void tongji() //ÓÃ»§Í³¼Æ¹¦ÄÜ
 	cout << endl;
 	cout << endl;
 	int cz;
-	cout << "ÊäÈë1·µ»Ø" << endl;
+	cout << "è¾“å…¥1è¿”å›" << endl;
 	while (true)
 	{
 	FANHUItongji:;
@@ -645,21 +672,21 @@ void tongji() //ÓÃ»§Í³¼Æ¹¦ÄÜ
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUItongji;
 		}
 	}
 }
 
-void YHcaidan()//ÓÃ»§²Ëµ¥
+void YHcaidan()//ç”¨æˆ·èœå•
 {
 	system("cls");
-	cout << "==¡ª¡ª ÓÃ »§ ²Ë µ¥ ¡ª¡ª== " << endl;
-	cout << " ¼ÇÕË¹¦ÄÜ¡¾1¡¿" << endl;
-	cout << " Í³¼Æ²éÑ¯¡¾2¡¿" << endl;
-	cout << " ÓÃ»§×¢Ïú¡¾3¡¿" << endl;
-	cout << "  ·µ »Ø¡¾4¡¿" << endl;
-	cout << "ÇëÑ¡Ôñ²Ù×÷£º";
+	cout << "==â€”â€” ç”¨ æˆ· èœ å• â€”â€”== " << endl;
+	cout << " è®°è´¦åŠŸèƒ½ã€1ã€‘" << endl;
+	cout << " ç»Ÿè®¡æŸ¥è¯¢ã€2ã€‘" << endl;
+	cout << " ç”¨æˆ·æ³¨é”€ã€3ã€‘" << endl;
+	cout << "  è¿” å›ã€4ã€‘" << endl;
+	cout << "è¯·é€‰æ‹©æ“ä½œï¼š";
 	int cz;
 	while (true)
 	{
@@ -687,7 +714,7 @@ void YHcaidan()//ÓÃ»§²Ëµ¥
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto HHH;
 		}
 	}
@@ -695,15 +722,15 @@ void YHcaidan()//ÓÃ»§²Ëµ¥
 
 }
 
-void JZgongneng()//¼ÇÕË¹¦ÄÜ
+void JZgongneng()//è®°è´¦åŠŸèƒ½
 {
-	cout << "==¡ª¡ª ¼ÇÕË¹¦ÄÜ ¡ª¡ª== " << endl;
-	cout << " Ìí¼ÓÊÕÈë¡¾1¡¿" << endl;
-	cout << " Ìí¼ÓÖ§³ö¡¾2¡¿" << endl;
-	cout << " ²é¿´ËùÓĞ¼ÇÂ¼¡¾3¡¿" << endl;
-	cout << " É¾³ı¼ÇÂ¼¡¾4¡¿" << endl;
-	cout << "  ·µ »Ø¡¾5¡¿" << endl;
-	cout << "ÇëÑ¡Ôñ²Ù×÷£º";
+	cout << "==â€”â€” è®°è´¦åŠŸèƒ½ â€”â€”== " << endl;
+	cout << " æ·»åŠ æ”¶å…¥ã€1ã€‘" << endl;
+	cout << " æ·»åŠ æ”¯å‡ºã€2ã€‘" << endl;
+	cout << " æŸ¥çœ‹æ‰€æœ‰è®°å½•ã€3ã€‘" << endl;
+	cout << " åˆ é™¤è®°å½•ã€4ã€‘" << endl;
+	cout << "  è¿” å›ã€5ã€‘" << endl;
+	cout << "è¯·é€‰æ‹©æ“ä½œï¼š";
 	int cz;
 
 	while (true)
@@ -737,13 +764,13 @@ void JZgongneng()//¼ÇÕË¹¦ÄÜ
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto LLL;
 		}
 	}
 }
 
-void zhuxiao() //ÓÃ»§×¢Ïú
+void zhuxiao() //ç”¨æˆ·æ³¨é”€
 {
 	remove("lingshi.txt");
 	remove("lingshi1.txt");
@@ -757,42 +784,42 @@ void zhuxiao() //ÓÃ»§×¢Ïú
 	ifstream chak2;
 	string zhuxiaoyhm, zhuxiaomima;
 
-	cout << "==¡ª¡ª ÓÃ»§×¢Ïú ¡ª¡ª== " << endl;
+	cout << "==â€”â€” ç”¨æˆ·æ³¨é”€ â€”â€”== " << endl;
 	
-	cout << "ÎªÈ·±£°²È«£¬ĞèÒªÖØĞÂÊäÈëÓÃ»§ÃûÓëÃÜÂë" << endl;
-	while (true) //¼ì²âÊäÈëµÄÓÃ»§ÃûÓëµÇÂ¼µÄÓÃ»§ÃûÊÇ·ñÒ»ÖÂ
+	cout << "ä¸ºç¡®ä¿å®‰å…¨ï¼Œéœ€è¦é‡æ–°è¾“å…¥ç”¨æˆ·åä¸å¯†ç " << endl;
+	while (true) //æ£€æµ‹è¾“å…¥çš„ç”¨æˆ·åä¸ç™»å½•çš„ç”¨æˆ·åæ˜¯å¦ä¸€è‡´
 	{
 	REINPUT22:;
 	
-		cout << " ÇëÊäÈëÓÃ»§Ãû£º" << endl;
+		cout << " è¯·è¾“å…¥ç”¨æˆ·åï¼š" << endl;
 		cin >> zhuxiaoyhm;
     
 		   if (zhuxiaoyhm==yhm)
 			{
-				cout << "ÓÃ»§ÃûÕıÈ·" << endl;
+				cout << "ç”¨æˆ·åæ­£ç¡®" << endl;
 				break;			
 			}
 			else
 			{
-				cout << "ÓÃ»§Ãû´íÎó£¬ÇëÖØĞÂÊäÈë" << endl;			
+				cout << "ç”¨æˆ·åé”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥" << endl;			
 				goto REINPUT22;
 			}	
 		}
-	while (true)//¼ì²âÊäÈëµÄÃÜÂëÓëµÇÂ¼µÄÃÜÂëÊÇ·ñÒ»ÖÂ
+	while (true)//æ£€æµ‹è¾“å…¥çš„å¯†ç ä¸ç™»å½•çš„å¯†ç æ˜¯å¦ä¸€è‡´
 	{
 	REINPUT23:;
 		
-		cout << " ÇëÊäÈëÃÜÂë£º" << endl;
+		cout << " è¯·è¾“å…¥å¯†ç ï¼š" << endl;
 		cin >> zhuxiaomima;
 			if ( zhuxiaomima ==mima)
 			{
-				cout << "ÃÜÂëÕıÈ·" << endl;		
+				cout << "å¯†ç æ­£ç¡®" << endl;		
 				break;
 			
 			}
 			else
 			{			
-				cout << "ÃÜÂë´íÎó£¬ÇëÖØĞÂÊäÈë" << endl;
+				cout << "å¯†ç é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 				goto REINPUT23;
 			}			
 	}
@@ -800,7 +827,7 @@ void zhuxiao() //ÓÃ»§×¢Ïú
 
 			
 			dl.open("yonghu.txt");
-			while (dl >> dlyhm && dl >> dlmima && dl >> dlsuijishu)//¶ÔÓÃ»§txtÎÄ¼şÖĞµÄÓÃ»§ĞÅÏ¢½øĞĞÉ¾³ı
+			while (dl >> dlyhm && dl >> dlmima && dl >> dlsuijishu)//å¯¹ç”¨æˆ·txtæ–‡ä»¶ä¸­çš„ç”¨æˆ·ä¿¡æ¯è¿›è¡Œåˆ é™¤
 			{
 
 
@@ -830,7 +857,7 @@ void zhuxiao() //ÓÃ»§×¢Ïú
 
 
 			chak1.open("shouru.txt");
-			while (chak1 >> chayhm1 >> leixing1 >> word1 >> money1 >> year1 >> month1 >> day1 >> daima1)//¶ÔÊÕÈëtxtÓĞ¹ØµÄËùÓĞÊÕÈë¼ÇÂ¼½øĞĞÉ¾³ı
+			while (chak1 >> chayhm1 >> leixing1 >> word1 >> money1 >> year1 >> month1 >> day1 >> daima1)//å¯¹æ”¶å…¥txtæœ‰å…³çš„æ‰€æœ‰æ”¶å…¥è®°å½•è¿›è¡Œåˆ é™¤
 			{
 
 			
@@ -860,7 +887,7 @@ void zhuxiao() //ÓÃ»§×¢Ïú
 
 
             chak2.open("zhichu.txt");
-			while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//¶ÔÊÕÈëtxtÓĞ¹ØµÄËùÓĞÖ§³ö¼ÇÂ¼½øĞĞÉ¾³ı
+			while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//å¯¹æ”¶å…¥txtæœ‰å…³çš„æ‰€æœ‰æ”¯å‡ºè®°å½•è¿›è¡Œåˆ é™¤
 			{
 				
 				
@@ -885,9 +912,9 @@ void zhuxiao() //ÓÃ»§×¢Ïú
 				
 			}
 	
-	cout << "¸ÃÕË»§ÒÑ×¢Ïú" << endl;
+	cout << "è¯¥è´¦æˆ·å·²æ³¨é”€" << endl;
 	int cz;
-	cout << "ÊäÈë1·µ»Ø" << endl;
+	cout << "è¾“å…¥1è¿”å›" << endl;
 	while (true)
 	{
 	FANHUIchakan:;
@@ -900,7 +927,7 @@ void zhuxiao() //ÓÃ»§×¢Ïú
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUIchakan;
 		}
 	}
@@ -908,10 +935,10 @@ void zhuxiao() //ÓÃ»§×¢Ïú
 
 }
 
-void shouru()//ÓÃ»§ÊÕÈë¼ÇÂ¼
+void shouru()//ç”¨æˆ·æ”¶å…¥è®°å½•
 {
     shouru:;
-	//¶Ô¸ÃÌõ¼ÇÂ¼Éú³ÉÒ»¸öËæ»úÊıID
+	//å¯¹è¯¥æ¡è®°å½•ç”Ÿæˆä¸€ä¸ªéšæœºæ•°ID
 	srand((unsigned int)time(NULL));
 	int suijishu = rand() % 9000 + 1000;
 
@@ -924,46 +951,46 @@ void shouru()//ÓÃ»§ÊÕÈë¼ÇÂ¼
 	
 	string word, money, leixing;
 
-	cout << "==¡ª¡ª Ìí¼ÓÊÕÈë ¡ª¡ª== " << endl;
-	cout << "ÇëÊäÈëÀàĞÍ" << endl;
-	cout << "1¹¤×Ê£¬2½±½ğ£¬3¼æÖ°£¬4Àí²Æ£¬5ÆäËü" << endl;
+	cout << "==â€”â€” æ·»åŠ æ”¶å…¥ â€”â€”== " << endl;
+	cout << "è¯·è¾“å…¥ç±»å‹" << endl;
+	cout << "1å·¥èµ„ï¼Œ2å¥–é‡‘ï¼Œ3å…¼èŒï¼Œ4ç†è´¢ï¼Œ5å…¶å®ƒ" << endl;
 	cin >> leixing;
 	if (leixing=="1")
 	{
-		leixing = "¹¤×Ê";
+		leixing = "å·¥èµ„";
 	}
 	else if (leixing == "2")
 	{
-		leixing = "½±½ğ";
+		leixing = "å¥–é‡‘";
 	}
 	else if (leixing == "3")
 	{
-		leixing = "¼æÖ°";
+		leixing = "å…¼èŒ";
 	}
 	else if (leixing == "4")
 	{
-		leixing = "Àí²Æ";
+		leixing = "ç†è´¢";
 	}
 	else  
 	{
-		leixing = "ÆäËü";
+		leixing = "å…¶å®ƒ";
 	}
 	
 	
-	cout << "ÇëÊäÈë±¸×¢" << endl;
+	cout << "è¯·è¾“å…¥å¤‡æ³¨" << endl;
 	
 	ofstream shouru;
 	shouru.open("shouru.txt", ios::app);
 	cin >> word;
-	cout << "ÇëÊäÈë½ğ¶î£¨Ôª£©" << endl;
+	cout << "è¯·è¾“å…¥é‡‘é¢ï¼ˆå…ƒï¼‰" << endl;
 	cin >> money;
-	shouru << yhm << " " <<leixing <<" " << word << " " << money << " " << year << " " << month << " " << day << " " << suijishu << endl;//½«¼ÇÂ¼Ğ´ÈëtxtÎÄ¼ş
+	shouru << yhm << " " <<leixing <<" " << word << " " << money << " " << year << " " << month << " " << day << " " << suijishu << endl;//å°†è®°å½•å†™å…¥txtæ–‡ä»¶
 	shouru.close();
-	cout << "¼ÇÕË³É¹¦" << endl;
-	cout << "ÀàĞÍ:"<<leixing << " " << "±¸×¢:" << word << " " << money << "Ôª"<<" "<< year << "Äê" << month << "ÔÂ" << day << "ÈÕ"  << endl;
+	cout << "è®°è´¦æˆåŠŸ" << endl;
+	cout << "ç±»å‹:"<<leixing << " " << "å¤‡æ³¨:" << word << " " << money << "å…ƒ"<<" "<< year << "å¹´" << month << "æœˆ" << day << "æ—¥"  << endl;
 
 	int cz;
-	cout << "ÊäÈë1·µ»Ø£¬ÊäÈë2¼ÌĞø¼ÇÕË" << endl;
+	cout << "è¾“å…¥1è¿”å›ï¼Œè¾“å…¥2ç»§ç»­è®°è´¦" << endl;
 	while (true)
 	{
 	FANHUIshouru:;
@@ -982,7 +1009,7 @@ void shouru()//ÓÃ»§ÊÕÈë¼ÇÂ¼
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUIshouru;
 		}
 	}
@@ -990,11 +1017,11 @@ void shouru()//ÓÃ»§ÊÕÈë¼ÇÂ¼
 
 }
 
-void zhichu()//¶ÔÖ§³ö½øĞĞ¼ÇÂ¼
+void zhichu()//å¯¹æ”¯å‡ºè¿›è¡Œè®°å½•
 {
 
 zhichu:;
-	//Éú³ÉÒ»¸öËæ»úÊı×÷Îª¸ÃÖ§³ö¼ÇÂ¼µÄID
+	//ç”Ÿæˆä¸€ä¸ªéšæœºæ•°ä½œä¸ºè¯¥æ”¯å‡ºè®°å½•çš„ID
 	srand((unsigned int)time(NULL));
 	int suijishu = rand() % 9000 + 1000;
 
@@ -1005,56 +1032,56 @@ zhichu:;
 	int day = localNow->tm_mday;
 
 	string word, money,leixing;
-	cout << "==¡ª¡ª Ìí¼ÓÖ§³ö ¡ª¡ª== " << endl;
-	cout << "ÇëÊäÈëÀàĞÍ" << endl;
-	cout << "1²ÍÒû£¬2¹ºÎï£¬3ÈÕÓÃ£¬4½»Í¨£¬5ÓéÀÖ£¬6Í¨Ñ¶£¬7Ò½ÁÆ£¬8ÆäËü" << endl;
+	cout << "==â€”â€” æ·»åŠ æ”¯å‡º â€”â€”== " << endl;
+	cout << "è¯·è¾“å…¥ç±»å‹" << endl;
+	cout << "1é¤é¥®ï¼Œ2è´­ç‰©ï¼Œ3æ—¥ç”¨ï¼Œ4äº¤é€šï¼Œ5å¨±ä¹ï¼Œ6é€šè®¯ï¼Œ7åŒ»ç–—ï¼Œ8å…¶å®ƒ" << endl;
 	cin >> leixing;
 	if (leixing == "1")
 	{
-		leixing = "²ÍÒû";
+		leixing = "é¤é¥®";
 	}
 	else if (leixing == "2")
 	{
-		leixing = "¹ºÎï";
+		leixing = "è´­ç‰©";
 	}
 	else if (leixing == "3")
 	{
-		leixing = "ÈÕÓÃ";
+		leixing = "æ—¥ç”¨";
 	}
 	else if (leixing == "4")
 	{
-		leixing = "½»Í¨";
+		leixing = "äº¤é€š";
 	}
 	else if (leixing == "5")
 	{
-		leixing = "ÓéÀÖ";
+		leixing = "å¨±ä¹";
 	}
 	else if (leixing == "6")
 	{
-		leixing = "Í¨Ñ¶";
+		leixing = "é€šè®¯";
 	}
 	else if (leixing == "7")
 	{
-		leixing = "Ò½ÁÆ";
+		leixing = "åŒ»ç–—";
 	}
 	else
 	{
-		leixing = "ÆäËü";
+		leixing = "å…¶å®ƒ";
 	}
-	cout << "ÇëÊäÈë±¸×¢" << endl;
+	cout << "è¯·è¾“å…¥å¤‡æ³¨" << endl;
 	
 	ofstream zhichu;
 	zhichu.open("zhichu.txt", ios::app);
 	cin >> word;
-	cout << "ÇëÊäÈë½ğ¶î(Ôª)" << endl;
+	cout << "è¯·è¾“å…¥é‡‘é¢(å…ƒ)" << endl;
 	cin >> money;
-	zhichu << yhm << " " << leixing << " " << word << " " << money << " " << year << " " << month << " " << day << " " << suijishu << endl;//½«¼ÇÂ¼Ğ´ÈëtxtÎÄ¼ş
+	zhichu << yhm << " " << leixing << " " << word << " " << money << " " << year << " " << month << " " << day << " " << suijishu << endl;//å°†è®°å½•å†™å…¥txtæ–‡ä»¶
 	zhichu.close();
-	cout << "¼ÇÕË³É¹¦" << endl;
-	cout << "ÀàĞÍ£º" << leixing << " " << "±¸×¢£º" << word << " " << money << "Ôª" << " " << year << "Äê" << month << "ÔÂ" << day << "ÈÕ" << endl;
+	cout << "è®°è´¦æˆåŠŸ" << endl;
+	cout << "ç±»å‹ï¼š" << leixing << " " << "å¤‡æ³¨ï¼š" << word << " " << money << "å…ƒ" << " " << year << "å¹´" << month << "æœˆ" << day << "æ—¥" << endl;
 
 	int cz;
-	cout << "ÊäÈë1·µ»Ø£¬ÊäÈë2¼ÌĞø¼ÇÕË" << endl;
+	cout << "è¾“å…¥1è¿”å›ï¼Œè¾“å…¥2ç»§ç»­è®°è´¦" << endl;
 	while (true)
 	{
 	FANHUIzhichu:;
@@ -1073,7 +1100,7 @@ zhichu:;
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUIzhichu;
 		}
 	}
@@ -1083,19 +1110,19 @@ zhichu:;
 	
 }
 
-void chakan()//ÓÃ»§²é¿´ËùÓĞÖ§³öÓëÊÕÈë¼ÇÂ¼
+void chakan()//ç”¨æˆ·æŸ¥çœ‹æ‰€æœ‰æ”¯å‡ºä¸æ”¶å…¥è®°å½•
 {
 	
 	string word1,chayhm1,money1,daima1,month1,day1,year1,leixing1;
 	ifstream chak1;
 	
 	chak1.open("shouru.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎªÊÕÈë¼ÇÂ¼¡ª¡ª¡ª¡ª" << endl;
-	while (chak1 >>chayhm1>>leixing1>>word1>> money1>> year1 >>month1>>day1>>daima1)//¶ÁÈ¡ËùÓĞÊÕÈë¼ÇÂ¼
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºæ”¶å…¥è®°å½•â€”â€”â€”â€”" << endl;
+	while (chak1 >>chayhm1>>leixing1>>word1>> money1>> year1 >>month1>>day1>>daima1)//è¯»å–æ‰€æœ‰æ”¶å…¥è®°å½•
 	{
 		if (yhm == chayhm1)
-		{//¶ÔËùÓĞÊÕÈë¼ÇÂ¼½øĞĞ´òÓ¡
-			cout << "ÀàĞÍ£º" << leixing1 << " " << "±¸×¢£º" << word1 << " " << money1 << "Ôª" << " " << year1 << "Äê" << month1 << "ÔÂ" << day1 << "ÈÕ" <<endl;
+		{//å¯¹æ‰€æœ‰æ”¶å…¥è®°å½•è¿›è¡Œæ‰“å°
+			cout << "ç±»å‹ï¼š" << leixing1 << " " << "å¤‡æ³¨ï¼š" << word1 << " " << money1 << "å…ƒ" << " " << year1 << "å¹´" << month1 << "æœˆ" << day1 << "æ—¥" <<endl;
 
 		}
 	}
@@ -1103,18 +1130,18 @@ void chakan()//ÓÃ»§²é¿´ËùÓĞÖ§³öÓëÊÕÈë¼ÇÂ¼
 	string word2, chayhm2,money2,daima2,leixing2,month2,year2,day2;
 	ifstream chak2;
 	chak2.open("zhichu.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎªÖ§³ö¼ÇÂ¼¡ª¡ª¡ª¡ª" << endl;
-	while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//¶ÁÈ¡ËùÓĞÖ§³ö¼ÇÂ¼
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºæ”¯å‡ºè®°å½•â€”â€”â€”â€”" << endl;
+	while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//è¯»å–æ‰€æœ‰æ”¯å‡ºè®°å½•
 	{
 		if (yhm == chayhm2)
-		{//¶ÔËùÓĞµÄÖ§³ö¼ÇÂ¼½øĞĞ´òÓ¡
-			cout << "ÀàĞÍ£º" << leixing2 << " " << "±¸×¢£º" << word2 << " " << money2 << "Ôª" << " " << year2 << "Äê" << month2 << "ÔÂ" << day2 << "ÈÕ"  << endl;
+		{//å¯¹æ‰€æœ‰çš„æ”¯å‡ºè®°å½•è¿›è¡Œæ‰“å°
+			cout << "ç±»å‹ï¼š" << leixing2 << " " << "å¤‡æ³¨ï¼š" << word2 << " " << money2 << "å…ƒ" << " " << year2 << "å¹´" << month2 << "æœˆ" << day2 << "æ—¥"  << endl;
 
 		}
 	}
 	chak2.close();
 	int cz;
-	cout << "ÊäÈë1·µ»Ø" << endl;
+	cout << "è¾“å…¥1è¿”å›" << endl;
 	while (true)
 	{
 	FANHUIchakan :;
@@ -1127,13 +1154,13 @@ void chakan()//ÓÃ»§²é¿´ËùÓĞÖ§³öÓëÊÕÈë¼ÇÂ¼
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUIchakan;
 		}
 	}
 }
 
-void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
+void shangchu()//ç”¨æˆ·åˆ é™¤è®°è´¦ä¿¡æ¯
 {
     shangchu:;
 	remove("lingshi2.txt");
@@ -1141,12 +1168,12 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 	string word1, chayhm1, money1, daima1, month1, day1, year1, leixing1;
 	ifstream chak1;
 	chak1.open("shouru.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎªÊÕÈë¼ÇÂ¼¡ª¡ª¡ª¡ª" << endl;
-	while (chak1 >> chayhm1 >> leixing1 >> word1 >> money1 >> year1 >> month1 >> day1 >> daima1)//¶ÔËùÓĞµÄÊÕÈë¼ÇÂ¼½øĞĞ´òÓ¡
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºæ”¶å…¥è®°å½•â€”â€”â€”â€”" << endl;
+	while (chak1 >> chayhm1 >> leixing1 >> word1 >> money1 >> year1 >> month1 >> day1 >> daima1)//å¯¹æ‰€æœ‰çš„æ”¶å…¥è®°å½•è¿›è¡Œæ‰“å°
 	{
 		if (yhm == chayhm1)
 		{
-			cout << "ÀàĞÍ£º" << leixing1 << " " << "±¸×¢£º" << word1 << " " << money1 << "Ôª" << " " << year1 << "Äê" << month1 << "ÔÂ" << day1 << "ÈÕ" << " " << "´úÂë£º" << daima1 << endl;
+			cout << "ç±»å‹ï¼š" << leixing1 << " " << "å¤‡æ³¨ï¼š" << word1 << " " << money1 << "å…ƒ" << " " << year1 << "å¹´" << month1 << "æœˆ" << day1 << "æ—¥" << " " << "ä»£ç ï¼š" << daima1 << endl;
 
 		}
 	}
@@ -1154,12 +1181,12 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 	string word2, chayhm2, money2, daima2, leixing2, month2, year2, day2;
 	ifstream chak2;
 	chak2.open("zhichu.txt");
-	cout << "¡ª¡ª¡ª¡ªÒÔÏÂÎªÖ§³ö¼ÇÂ¼¡ª¡ª¡ª¡ª" << endl;
-	while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//¶ÔËùÓĞµÄÖ§³ö¼ÇÂ¼½øĞĞ´òÓ¡
+	cout << "â€”â€”â€”â€”ä»¥ä¸‹ä¸ºæ”¯å‡ºè®°å½•â€”â€”â€”â€”" << endl;
+	while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//å¯¹æ‰€æœ‰çš„æ”¯å‡ºè®°å½•è¿›è¡Œæ‰“å°
 	{
 		if (yhm == chayhm2)
 		{
-			cout << "ÀàĞÍ£º" << leixing2 << " " << "±¸×¢£º" << word2 << " " << money2 << "Ôª" << " " << year2 << "Äê" << month2 << "ÔÂ" << day2 << "ÈÕ" << " " << "´úÂë£º" << daima2 << endl;
+			cout << "ç±»å‹ï¼š" << leixing2 << " " << "å¤‡æ³¨ï¼š" << word2 << " " << money2 << "å…ƒ" << " " << year2 << "å¹´" << month2 << "æœˆ" << day2 << "æ—¥" << " " << "ä»£ç ï¼š" << daima2 << endl;
 
 		}
 		
@@ -1176,9 +1203,9 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 		chak1.open("shouru.txt");
 		chak2.open("zhichu.txt");
 
-		cout << "ÇëÊäÈëÄãÒªÉ¾³ıµÄ¼ÇÂ¼µÄ´úÂë£º" << endl;
+		cout << "è¯·è¾“å…¥ä½ è¦åˆ é™¤çš„è®°å½•çš„ä»£ç ï¼š" << endl;
 		cin >> lurudaima;
-		//¶ÁÈ¡ÊäÈëµÄ´úÂëÊÇ·ñ´æÔÚ
+		//è¯»å–è¾“å…¥çš„ä»£ç æ˜¯å¦å­˜åœ¨
 		chak1 >> chayhm1 >> leixing1 >> word1 >> money1 >> year1 >> month1 >> day1 >> daima1;
 		chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2;
 		
@@ -1186,14 +1213,14 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 			
 			if (lurudaima == daima1)
 			{
-				cout << "É¾³ı³É¹¦" << endl;
+				cout << "åˆ é™¤æˆåŠŸ" << endl;
 				chak2.close();
 				chak1.close();
 				break;
 			}
 			else if(lurudaima == daima2)
 			{
-				cout << "É¾³ı³É¹¦" << endl;
+				cout << "åˆ é™¤æˆåŠŸ" << endl;
 				chak2.close();
 				chak1.close();
 				break;
@@ -1201,7 +1228,7 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 			}
 			else
 			{
-				cout << "ÎŞĞ§´úÂë£¬ÇëÖØĞÂÊäÈë" << endl;
+				cout << "æ— æ•ˆä»£ç ï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 				goto FANHUI4;
 			}
 
@@ -1212,10 +1239,10 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 	
 	
 	chak1.open("shouru.txt");
-	while (chak1 >> chayhm1 >> leixing1 >> word1 >> money1 >> year1 >> month1 >> day1 >> daima1)//¶ÔÊäÈëµÄÏà¹Ø¼ÇÂ¼½øĞĞÉ¾³ı
+	while (chak1 >> chayhm1 >> leixing1 >> word1 >> money1 >> year1 >> month1 >> day1 >> daima1)//å¯¹è¾“å…¥çš„ç›¸å…³è®°å½•è¿›è¡Œåˆ é™¤
 	{
 		
-		if (yhm == chayhm1&&daima1==lurudaima)//¶ÔÓ¦´úÂëÑ°ÕÒÒªÉ¾³ıµÄ¼ÇÂ¼
+		if (yhm == chayhm1&&daima1==lurudaima)//å¯¹åº”ä»£ç å¯»æ‰¾è¦åˆ é™¤çš„è®°å½•
 		{
 			chak1.close();
 			ofstream out("lingshi1.txt");
@@ -1245,9 +1272,9 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 	
 	
 	chak2.open("zhichu.txt");
-     while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//¶ÔÊäÈëµÄÏà¹Ø¼ÇÂ¼½øĞĞÉ¾³ı
+     while (chak2 >> chayhm2 >> leixing2 >> word2 >> money2 >> year2 >> month2 >> day2 >> daima2)//å¯¹è¾“å…¥çš„ç›¸å…³è®°å½•è¿›è¡Œåˆ é™¤
 	{
-		if (yhm == chayhm2&&daima2==lurudaima)//¶ÔÓ¦´úÂëÑ°ÕÒÒªÉ¾³ıµÄ¼ÇÂ¼
+		if (yhm == chayhm2&&daima2==lurudaima)//å¯¹åº”ä»£ç å¯»æ‰¾è¦åˆ é™¤çš„è®°å½•
 		{
 			chak2.close();
 			ofstream out("lingshi2.txt");  
@@ -1272,7 +1299,7 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 	
 
 	int cz;
-	cout << "ÊäÈë1·µ»Ø£¬ÊäÈë2¼ÌĞøÉ¾³ı" << endl;
+	cout << "è¾“å…¥1è¿”å›ï¼Œè¾“å…¥2ç»§ç»­åˆ é™¤" << endl;
 	while (true)
 	{
 	FANHUIshangchu:;
@@ -1291,7 +1318,7 @@ void shangchu()//ÓÃ»§É¾³ı¼ÇÕËĞÅÏ¢
 		}
 		else
 		{
-			cout << "ÎŞĞ§²Ù×÷£¬ÇëÖØĞÂÊäÈë" << endl;
+			cout << "æ— æ•ˆæ“ä½œï¼Œè¯·é‡æ–°è¾“å…¥" << endl;
 			goto FANHUIshangchu;
 		}
 	}
@@ -1303,4 +1330,5 @@ int main()
 	zhucaidan();
 	return 0;
 	
+
 }
